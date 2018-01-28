@@ -39,3 +39,28 @@ Postman: download and install Postman
     componentDidMount() {
         //fetch data before hand, it is something needed for searching database
     }
+
+6. Route and Switch
+    ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <BrowserRouter>
+      <div>
+        <Switch>
+          
+          <Route path ="/posts/new" component = {PostsNew}/>
+          <Route path = "/" component={PostsIndex} />          
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Provider>
+  , document.querySelector('.container'));
+
+7. Link route:
+    Like anchor <a> tag,
+    <Link className='btn btn-primary' to="/posts/new" >     //pickup from route path in main index
+        Add new post
+    </Link>
+
+8. Redux-form:
+    document: redux-form.com
+    install: npm install --save redux-form@6.6.3
