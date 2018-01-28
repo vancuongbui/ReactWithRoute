@@ -1,0 +1,41 @@
+//The project is all about routes between pages in it.
+
+Postman: download and install Postman
+
+1. React-route-dom:
+    install: npm install --save react-router-dom@4.0.0
+
+2. BrowserRouter:
+    import {BrowserRouter, Route} from 'react-router-dom'
+
+    using:
+    ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <BrowserRouter>
+            <div>
+                <TestRender />      //this is just a nother render on the top of ther other
+                <Route path = "/hello" component={Hello} />
+                <Route path = "/goodbye" component={Goodbye} />
+            </div>
+        </BrowserRouter>
+    </Provider>
+    , document.querySelector('.container'));
+    Note: there is only one element inside tag BrowserRouter
+
+4. _mapKeys(posts, 'id') //make it easy to access list of item
+    turn an json list of item into an pure json of object with "id" is the key, item itself is the new value.
+    example: json file: const posts = [
+        {id:4, title:"Hello"},
+        {id:5, title:"Bye"},
+    ]
+    const state = _.mapKeys(posts,'id') will return new json file:
+        {
+            {"4": {id:4, title:"Hello"}},
+            {"5": {id:5, title:"Bye"}}
+        }
+    calling: state["4"] will return {id:4, title:"Hello"}
+
+5. componentDidMount()
+    componentDidMount() {
+        //fetch data before hand, it is something needed for searching database
+    }
