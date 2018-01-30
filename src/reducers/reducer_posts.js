@@ -1,4 +1,4 @@
-import {FETCH_POSTS} from '../actions'
+import {FETCH_POSTS, CREATE_POST} from '../actions'
 import _ from 'lodash';     //using for _mapKeys
 
 export default function (state={}, action) {
@@ -6,6 +6,8 @@ export default function (state={}, action) {
         case FETCH_POSTS:
             //console.log(action.payload.data);   //[post1, post2]
             return _.mapKeys(action.payload.data, 'id');
+        case CREATE_POST:
+            return  action.payload.data
         default:
             return state;
     }
