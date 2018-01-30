@@ -13,11 +13,17 @@ class PostsIndex extends Component {
     renderPosts() {
         if (this.props.posts) {
             return _.map(this.props.posts, post => {
-                return (
-                    <li className="list-group-item" key={post.id} >
-                        {post.title}
-                    </li>
-                )
+                const post_url = `/posts/${post.id}`
+                if (post.title != null) {
+                    return (
+                        <li className="list-group-item" key={post.id} >   
+                            <Link to={post_url}>                
+                                {post.title}
+                            </Link>
+                        </li>
+                    )
+                }
+               
             })            
         }
         else {
